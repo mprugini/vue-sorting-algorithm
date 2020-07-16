@@ -72,8 +72,16 @@ export default {
         }
       }
     },
-    insertionSort(a) {
-      alert(a);
+
+    async insertionSort(a) {
+      let i, j;
+      for (i = 1; i < a.length; i++) {
+        j = i;
+        while (j > 0 && a[j-1] > a[j]) {
+          this.arraySwap(a, j, j-1);
+          j--;
+        }
+      }
     }
   }
 }
