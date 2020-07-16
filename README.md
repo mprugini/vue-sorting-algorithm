@@ -1,5 +1,7 @@
 # vue-sorting-algorithm
 
+Implementation of Bubble, Selection and Insertion Sort using Vuejs
+
 ## Project setup
 ```
 npm install
