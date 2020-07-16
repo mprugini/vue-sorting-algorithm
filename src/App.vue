@@ -4,18 +4,13 @@
     <button class="btn btn-primary" @click="shuffle(numberArray)">Shuffle!</button>
     <button class="btn btn-primary mx-2" @click="bubbleSort(numberArray)">Bubble Sort</button>
     <button class="btn btn-primary mx-2" @click="selectionSort(numberArray)">Selection Sort</button>
-    <button class="btn btn-primary mx-2" @click="insertionSort">Insertion Sort</button>
+    <button class="btn btn-primary mx-2" @click="insertionSort(numberArray)">Insertion Sort</button>
     <br>
     <br>
     <ul class="list-group list-group-horizontal justify-content-center">
       <!-- :class="[ number % 2 === 0 ? 'list-group-item list-group-item-primary' : 'list-group-item list-group-item-success' ] -->
       <li :class="[ number % 2 === 0 ? 'list-group-item list-group-item-primary' : 'list-group-item list-group-item-success' ]" v-for="number in numberArray" :key="number">{{ number }}</li>
     </ul>
-    <!-- <br>
-    <br>
-    <ul class="list-group list-group-horizontal justify-content-center">
-      <li :class="[ number % 2 === 0 ? 'list-group-item list-group-item-primary' : 'list-group-item list-group-item-success' ]" v-for="number in shuffledArray" :key="number">{{ number }}</li>
-    </ul> -->
   </div>
 </template>
 
@@ -40,8 +35,6 @@ export default {
 
     arraySwap(array, indexA, indexB) {
       var x = array[indexA];
-      // array[indexA] = array[indexB];
-      // array[indexB] = x;
       this.arraySetWithoutIndexes(array, indexA, array[indexB]);
       this.arraySetWithoutIndexes(array, indexB, x);
     },
@@ -55,7 +48,6 @@ export default {
     },
 
     async bubbleSort(a) {
-
       var len = a.length;
       for (var i = len - 1; i >= 0; i--) {
         for (var j = 1; j <= i; j++) {
@@ -64,14 +56,24 @@ export default {
           }
         }
       }
-
     },
 
     async selectionSort(a) {
-      alert(a);
+      let i, j;
+      for (j = 0; j < a.length - 1; j++) {
+        let iMin = j;
+        for (i = j + 1; i < a.length; i++) {
+          if (a[i] < a[iMin]) {
+            iMin = i;
+          }
+        }
+        if (iMin != j) {
+          this.arraySwap(a, j, iMin);
+        }
+      }
     },
-    insertionSort() {
-      alert('Insertion sort');
+    insertionSort(a) {
+      alert(a);
     }
   }
 }
