@@ -5,7 +5,6 @@
     <button class="btn btn-primary mx-2" @click="bubbleSort(numberArray)">Bubble Sort</button>
     <button class="btn btn-primary mx-2" @click="selectionSort(numberArray)">Selection Sort</button>
     <button class="btn btn-primary mx-2" @click="insertionSort(numberArray)">Insertion Sort</button>
-    <button class="btn btn-primary mx-2" @click="multiples">Multiples</button>
     <br>
     <br>
     <ul class="list-group list-group-horizontal justify-content-center">
@@ -29,9 +28,6 @@ export default {
     }
   },
   methods: {
-    multiples() {
-
-    },
     arraySetWithoutIndexes(array, index, value) {
       array.splice(index, 1, value);
     },
