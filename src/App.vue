@@ -5,10 +5,10 @@
     <button class="btn btn-primary mx-2" @click="bubbleSort(numberArray)">Bubble Sort</button>
     <button class="btn btn-primary mx-2" @click="selectionSort(numberArray)">Selection Sort</button>
     <button class="btn btn-primary mx-2" @click="insertionSort(numberArray)">Insertion Sort</button>
+    <button class="btn btn-primary mx-2" @click="multiples">Multiples</button>
     <br>
     <br>
     <ul class="list-group list-group-horizontal justify-content-center">
-      <!-- :class="[ number % 2 === 0 ? 'list-group-item list-group-item-primary' : 'list-group-item list-group-item-success' ] -->
       <li :class="[ number % 2 === 0 ? 'list-group-item list-group-item-primary' : 'list-group-item list-group-item-success' ]" v-for="number in numberArray" :key="number">{{ number }}</li>
     </ul>
   </div>
@@ -29,6 +29,9 @@ export default {
     }
   },
   methods: {
+    multiples() {
+
+    },
     arraySetWithoutIndexes(array, index, value) {
       array.splice(index, 1, value);
     },
